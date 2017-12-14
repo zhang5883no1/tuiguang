@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head lang="en">
+<meta charset="UTF-8" />
+<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+<title></title>
+    <style> 
+    	table{border:1px solid black} 
+    	.ti{ height: 26px; width: 80px; }
+    </style> 
+</head>
+<body style="font-size:30px;">
+		<select id="s" style="width:100%;height:100px;font-size:15px">
+			<option value="">--未选择--</option>
+			<option th:each="p : ${paths}" th:text="${p}" th:value="${p}"> </option>
+		</select>
+		
+		<div>
+			<p>微信号</p>
+			<br/>
+			<input id="subcode" type="button" value="提交微信" style="width: 30%; height: 50px; font-size: 1.5rem;float:left;margin:5px;"/>
+			<input id="clearcode" type="button" value="清空微信" style="width: 30%; height: 50px; font-size: 1.5rem;float:left;margin:5px;"/>
+			<input id="copycode" type="button" value="复制微信" style="width: 30%; height: 50px; font-size: 1.5rem;float:left;margin:5px;"/>
+			<br/>
+			<br/>
+
+			<table border="0" cellspacing="0" cellpadding="0" style="width:100%;height:300px;"> 
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+					<td><input type="text" class="ti" /></td>
+				</tr>
+			</table>
+
+		</div>
+		
+		
+		<div id="copyDiv" style="position: absolute;width: 100%;height: 100%; top: 0; background: white; left: 0;display:none;">
+			<span id="closeBtn" style="position: absolute;right: 5px;">×</span>
+			<p>当前链接</p>
+			<p id="sourceLink"></p>
+			<p>目标链接</p>
+			<select id="targetLink" style="width:100%;height:100px;font-size:15px">
+				<option value="">--未选择--</option>
+				<option th:each="p : ${paths}" th:text="${p}" th:value="${p}"> </option>
+			</select>
+			<input id="subCopyBtn" type="button" value="复制微信" style="width: 30%; height: 50px; font-size: 1.5rem;margin:5px;"/>
+		</div>
+		
+		
+		
+		<script type="text/javascript" src="/js/jquery.js"></script>
+		<script type="text/javascript" src="/js/code.js"></script>
+</body>
+</html>

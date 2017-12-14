@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head lang="en">
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<title></title>
+    <style> 
+    	table{border:1px solid black} 
+    	.ti{ height: 26px; width: 80px; }
+    </style> 
+    
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" /> 
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script src="/js/schedule.js"></script>
+</head>
+<body style="font-size:30px;">
+		<div>
+			<p>定时任务</p>
+			<table border="0" cellspacing="0" cellpadding="0" style="width:100%;height:300px;"> 
+				<tr th:each="action : ${actions}">
+					<td><input type="text" class="test-datepicker ymdvel" placeholder="选择日期.." th:value="${action.ymd}"/></td>
+					<td>
+						<select class="hourvel">
+							<option value="" th:selected="${action.hour eq ''}?selected" >选择时间</option>
+							<option value="1" th:selected="${action.hour eq '1'}?selected" >1:00</option>
+							<option value="2" th:selected="${action.hour eq '2'}?selected" >2:00</option>
+							<option value="3" th:selected="${action.hour eq '3'}?selected" >3:00</option>
+							<option value="4" th:selected="${action.hour eq '4'}?selected" >4:00</option>
+							<option value="5" th:selected="${action.hour eq '5'}?selected" >5:00</option>
+							<option value="6" th:selected="${action.hour eq '6'}?selected" >6:00</option>
+							<option value="7" th:selected="${action.hour eq '7'}?selected" >7:00</option>
+							<option value="8" th:selected="${action.hour eq '8'}?selected" >8:00</option>
+							<option value="9" th:selected="${action.hour eq '9'}?selected" >9:00</option>
+							<option value="10" th:selected="${action.hour eq '10'}?selected" >10:00</option>
+							<option value="11" th:selected="${action.hour eq '11'}?selected" >11:00</option>
+							<option value="12" th:selected="${action.hour eq '12'}?selected" >12:00</option>
+							<option value="13" th:selected="${action.hour eq '13'}?selected" >13:00</option>
+							<option value="14" th:selected="${action.hour eq '14'}?selected" >14:00</option>
+							<option value="15" th:selected="${action.hour eq '15'}?selected" >15:00</option>
+							<option value="16" th:selected="${action.hour eq '16'}?selected" >16:00</option>
+							<option value="17" th:selected="${action.hour eq '17'}?selected" >17:00</option>
+							<option value="18" th:selected="${action.hour eq '18'}?selected" >18:00</option>
+							<option value="19" th:selected="${action.hour eq '19'}?selected" >19:00</option>
+							<option value="20" th:selected="${action.hour eq '20'}?selected" >20:00</option>
+							<option value="21" th:selected="${action.hour eq '21'}?selected" >21:00</option>
+							<option value="22" th:selected="${action.hour eq '22'}?selected" >22:00</option>
+							<option value="23" th:selected="${action.hour eq '23'}?selected" >23:00</option>
+							<option value="0" th:selected="${action.hour eq '0'}?selected" >24:00</option>
+						</select>
+					</td>
+					<td>
+						<select class="detailvel">
+							<option value="" th:selected="${action.detail eq ''}?selected">选择上线页面</option>
+							<option value="uc14.dszytz.com-1" th:selected="${action.detail eq 'uc14.dszytz.com-1'}?selected" >uc899.haodai30.cn-审核页</option>
+							<option value="uc14.dszytz.com-2" th:selected="${action.detail eq 'uc14.dszytz.com-2'}?selected" >uc899.haodai30.cn-推广页</option>
+							<option value="uc14.dszytz.com-3" th:selected="${action.detail eq 'uc14.dszytz.com-3'}?selected" >uc890.haodai20.cn-审核页</option>
+							<option value="uc890.haodai20.cn-tg" th:selected="${action.detail eq '4'}?selected" >uc890.haodai20.cn-推广页</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<input id="subcode" type="button" value="提交" style="width: 100%; height: 50px; font-size: 1.5rem;"/>
+		</div>
+		
+		<script type="text/javascript">
+			$(".test-datepicker").datepicker({
+				showAnim: 'slideDown',//show 默认,slideDown 滑下,fadeIn 淡入,blind 百叶窗,bounce 反弹,Clip 剪辑,drop 降落,fold 折叠,slide 滑动
+				minDate: 0,//最小日期，可以是Date对象，或者是数字（从今天算起，例如+7），或者有效的字符串('y'代表年, 'm'代表月, 'w'代表周, 'd'代表日, 例如：'+1m +7d')。
+				maxDate: +2,//最大日期，同上
+				defaultDate : 0, //默认日期，同上
+				duration : 'fast',//动画展示的时间，可选是"slow", "normal", "fast",''代表立刻，数字代表毫秒数
+				firstDay : 1 ,//设置一周中的第一天。默认星期天0，星期一为1，以此类推。
+				nextText : '下一月',//设置“下个月”链接的显示文字。鼠标放上去的时候
+				prevText : '上一月',//设置“上个月”链接的显示文字。
+				showButtonPanel: true,//是否显示按钮面板 
+				currentText : '今天',//设置当天按钮的文本内容，此按钮需要通过showButtonPanel参数的设置才显示。
+				gotoCurrent : false,//如果设置为true，则点击当天按钮时，将移至当前已选中的日期，而不是今天。
+				dateFormat: 'yy-mm-dd'
+			}); 
+		</script>
+</body>
+</html>

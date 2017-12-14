@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head lang="en">
+<meta charset="UTF-8" />
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>二维码上传</title>
+<script type="text/javascript" src="/js/jquery.js"></script>
+</head>
+<body>
+当前目录:<font th:text="${curl}" id="curl"></font><br/>
+<a href="javascript:toprev();">..</a>
+	<ul th:each="p : ${paths}">
+		<li>
+			<a th:if="${p.type==1}" th:value="${p.path}" th:text="${p.name}" th:href="|javascript:topage('${p.path}')|"></a>
+			
+			<font th:if="${p.type==0}" th:value="${p.path}" th:text="${p.name}"></font>
+		</li>
+	</ul>
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/ff.js"></script>
+</body>
+</html>
