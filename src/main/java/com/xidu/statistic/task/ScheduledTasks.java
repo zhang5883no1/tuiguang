@@ -32,9 +32,9 @@ public class ScheduledTasks {
 	private StatisticRepository statisticRepository;
 	@Resource
 	private OldStatisticRepository oldStatisticRepository;
-
+	
 	private PropertiesConfig properties = new PropertiesConfig();
-
+	
 	/**
 	 * @Scheduled(fixedRate = 5000) ：上一次开始执行时间点之后5秒再执行
 	 * @Scheduled(fixedDelay = 5000) ：上一次执行完毕时间点之后5秒再执行
@@ -106,7 +106,6 @@ public class ScheduledTasks {
 		oldStatisticRepository.save(list);
 		statisticRepository.deleteAll();
 	}
-
 	
 	// 每分钟执行一次
 	//定时任务处理
